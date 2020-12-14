@@ -14,14 +14,12 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <div className="App">
-          <BrowserRouter basename="/" history={history}>
-            <Switch>
-              <Route exact path="/" component={Login} />
-              <Route exact path="/dashboard" component={MainDsh} />
-            </Switch>
-          </BrowserRouter>
-        </div>
+        <BrowserRouter basename="/" history={history}>
+          <Switch>
+            <Route exact path="/" component={Login} />
+            <Route exact path="/dashboard" component={MainDsh} />
+          </Switch>
+        </BrowserRouter>
       </PersistGate>
     </Provider>
   );
