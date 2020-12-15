@@ -4,6 +4,7 @@ import Paper from "@material-ui/core/Paper";
 import FormInput from "../components/FormInfo";
 import PickCategories from "../components/PickCategories";
 import EventNoteIcon from "@material-ui/icons/EventNote";
+import EditorInput from "../components/ContentEditor";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -19,6 +20,9 @@ const useStyles = makeStyles((theme) => ({
   container: {
     display: "flex",
     padding: "10px 50px",
+  },
+  editor: {
+    padding: "10px",
   },
 }));
 
@@ -41,6 +45,9 @@ export default function SimplePaper() {
       <Paper className={classes.container}>
         <FormInput />
         <PickCategories />
+      </Paper>
+      <Paper className={classes.editor}>
+        <EditorInput />
       </Paper>
     </div>
   );
