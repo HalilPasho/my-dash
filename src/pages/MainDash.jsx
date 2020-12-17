@@ -5,7 +5,7 @@ import FormInput from "../components/FormInfo";
 import PickCategories from "../components/PickCategories";
 import EventNoteIcon from "@material-ui/icons/EventNote";
 import EditorInput from "../components/ContentEditor";
-
+import { useSelector } from "react-redux";
 const useStyles = makeStyles((theme) => ({
   root: {
     display: "flex",
@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) => ({
   },
   container: {
     display: "flex",
-    padding: "10px 50px",
+    padding: "10px 10px",
   },
   editor: {
     padding: "10px",
@@ -28,10 +28,15 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimplePaper() {
   const classes = useStyles();
-
   return (
     <div className={classes.root}>
-      <div style={{ textAlign: "center", display: "contents" }}>
+      <div
+        style={{
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
+        }}
+      >
         <EventNoteIcon
           color="primary"
           fontSize="large"
@@ -40,7 +45,7 @@ export default function SimplePaper() {
             paddingTop: "4px",
           }}
         />
-        <h1>Dashboard</h1>
+        <h1>Dashboard </h1>
       </div>
       <Paper className={classes.container}>
         <FormInput />

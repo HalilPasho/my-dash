@@ -7,16 +7,20 @@ import LockOutlinedIcon from "@material-ui/icons/LockOutlined";
 import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { useStyles } from "./LoginStyles";
+import { useHistory } from "react-router-dom";
 
 export default function SignIn() {
   const classes = useStyles();
-
+  let history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setpassword] = useState("");
 
   const submit = (e) => {
     e.preventDefault();
-    console.log(email, password);
+
+    history.push({
+      pathname: `/dashboard`,
+    });
   };
   return (
     <Container component="main" maxWidth="xs">

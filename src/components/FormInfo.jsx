@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) => ({
 export default function FormInput() {
   const classes = useStyles();
   const [title, setTitle] = useState("");
-  console.log(title);
+
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div className={classes.maintitle}>Enter Title</div>

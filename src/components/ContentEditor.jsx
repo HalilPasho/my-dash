@@ -1,18 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import { Editor } from "@tinymce/tinymce-react";
 import sss from "../123.jpg";
+import { useDispatch } from "react-redux";
+import { CONTENT_EDITOR } from "../store/actions";
+
 const EditorInput = () => {
-  const handleEditorChange = (content, editor) => {
-    console.log("Content was updated:", content);
+  const dispatch = useDispatch();
+  const [contentArea, setContentArea] = useState();
+
+  const handleEditorChange = (content) => {
+    setContentArea(content);
+    dispatch({ type: CONTENT_EDITOR, payload: contentArea });
   };
 
   return (
     <Editor
-      initialValue="<p>Enter content</p>"
+      value={contentArea}
       apiKey="rvip8at86ivwxsauelhsmejzkzlj5uodrw8yv0oco4un94sq"
       init={{
         height: 500,
         menubar: "insert",
+        outputFormat: "text",
         plugins: [
           "advlist autolink lists link image charmap print preview anchor",
           "searchreplace visualblocks code fullscreen",

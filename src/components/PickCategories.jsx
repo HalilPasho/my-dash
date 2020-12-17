@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import FormLabel from "@material-ui/core/FormLabel";
 import FormControl from "@material-ui/core/FormControl";
@@ -39,10 +39,9 @@ export default function CheckboxesGroup() {
       setCheckedVal([...checkedVal, item]); // or push
     }
   };
-  console.log(checkedVal);
+
   const handleChange = (event) => {
     setChecked({ ...checked, [event.target.name]: event.target.checked });
-
     updateUsesTools(event.target.name);
   };
 
